@@ -1,22 +1,22 @@
 # Reactivities
 
-### Tools
+## Tools
 * ASP.Net Core
 * React
 * Visual Studio
 * C#
 * Typescript
 
-### Versions
+## Versions
 .Net Core SKD - V 3.1
 
-### Projects
+## Projects
 
-#### Web API
+### Web API
 * **API** - receives and responds to http requests
   * *reference* - Application
 
-#### Libraries
+### Libraries
 * **Application** - processess the business logic
   * *reference* -
 * **Persistence** - provides access to database
