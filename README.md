@@ -18,8 +18,14 @@
 
 ### Libraries
 * **Application** - processess the business logic
-  * *reference* -
+  * *reference* - Domain & Persistence
 * **Persistence** - provides access to database
-  * *references* - 
+  * *references* - Domain
 * **Domain** - contains the business entities
   * *reference* - None
+
+### Change Log
+* 1.1 *Created projects (API, Application, Persistence, and Domain); projects added to sln.file, and references added* - 08/22/2020
+
+### Resources
+* Udemy
