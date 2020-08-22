@@ -1,25 +1,31 @@
 # Reactivities
 
-### Tools
+## Tools
 * ASP.Net Core
 * React
 * Visual Studio
 * C#
 * Typescript
 
-### Versions
+## Versions
 .Net Core SKD - V 3.1
 
-### Projects
+## Projects
 
-#### Web API
+### Web API
 * **API** - receives and responds to http requests
   * *reference* - Application
 
-#### Libraries
+### Libraries
 * **Application** - processess the business logic
-  * *reference* -
+  * *reference* - Domain & Persistence
 * **Persistence** - provides access to database
-  * *references* - 
+  * *references* - Domain
 * **Domain** - contains the business entities
   * *reference* - None
+
+### Change Log
+* 1.1 *Created projects (API, Application, Persistence, and Domain); projects added to sln.file, and references added* - 08/22/2020
+
+### Resources
+* Udemy
