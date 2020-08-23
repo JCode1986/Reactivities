@@ -25,7 +25,10 @@
 ## Useful dotnet commands
 * `dotnet -h` - list of all available dotnet commands 
 * `dotnet ef migrations add <name> -p <path> -s <path>` - adds new migrations to one or more projects
-* `dotnet watch run` - command works inside context of the startup project; creates database and runs application 
+* `dotnet watch run` - command works inside context of the startup project; creates database and runs application
+
+## Useful react commands
+ * `npm start` - starts react app
 ## Projects
 
 ### Web API
@@ -39,6 +42,9 @@
   * *reference* - Domain
 * **Domain** - contains the business entities
   * *reference* - None
+
+### React
+* **client-app** - Client side
 ---
 
 ## Getting Started
