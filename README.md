@@ -9,6 +9,11 @@
 * Sqlite
 * Visual Studio
   * Extensions: SQLite/SQL Server Compact Toolbox
+* Windows Powershell
+* Postman
+* Axios 
+* MobX
+* SignalR
 * C#
 * Typescript
 ---
@@ -62,7 +67,10 @@ dotnet run
 
 
 ## Change Log
+#### Client Skeleton
+* 1.7
 #### API Skeleton
+* 1.6 *Succesfully queried from database utilizing postman* - 08/23/2020
 * 1.5 *Upgraded EF Core Tools Version from 3.1.2 to 3.1.7, and succesfully seeded data* - 08/22/2020
 * 1.4 *Database created; SQLite/SQL Server Compact Toolbox extension installed to view database* - 08/22/2020
 * 1.3 *Initial migration success* - 08/22/2020
