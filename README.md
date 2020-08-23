@@ -11,11 +11,16 @@
   * Extensions: SQLite/SQL Server Compact Toolbox
 * C#
 * Typescript
+---
 
 ## Versions
 * .Net Core SKD & runtime - V 3.1.7
 * netstandard - V 2.0
-
+---
+## Useful dotnet commands
+* `dotnet -h` - list of all available dotnet commands 
+* `dotnet ef migrations add <name> -p <path> -s <path>` - adds new migrations to one or more projects
+* `dotnet watch run` - command works inside context of the startup project; creates database and runs application 
 ## Projects
 
 ### Web API
@@ -29,6 +34,7 @@
   * *reference* - Domain
 * **Domain** - contains the business entities
   * *reference* - None
+---
 
 ## Getting Started
 
@@ -51,15 +57,17 @@ Once the database has been created, the application can be run. Options for runn
 cd YourRepo/YourProject
 dotnet run
 ```
-
+---
 ## Pages
 
 
-### Change Log
+## Change Log
+#### API Skeleton
+* 1.5 *Upgraded EF Core Tools Version from 3.1.2 to 3.1.7, and succesfully seeded data* - 08/22/2020
 * 1.4 *Database created; SQLite/SQL Server Compact Toolbox extension installed to view database* - 08/22/2020
 * 1.3 *Initial migration success* - 08/22/2020
 * 1.2 *Local host routes operable, and getting back data* - 08/22/2020
 * 1.1 *Created projects (API, Application, Persistence, and Domain); projects added to sln.file, and references added* - 08/22/2020
-
+---
 ### Resources
 * Udemy
