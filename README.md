@@ -8,7 +8,8 @@
 * Typescript
 
 ## Versions
-.Net Core SKD - V 3.1
+* .Net Core SKD - V 3.1
+* netstandard - V 2.0
 
 ## Projects
 
@@ -18,9 +19,9 @@
 
 ### Libraries
 * **Application** - processess the business logic
-  * *reference* - Domain & Persistence
+  * *references* - Domain & Persistence
 * **Persistence** - provides access to database
-  * *references* - Domain
+  * *reference* - Domain
 * **Domain** - contains the business entities
   * *reference* - None
 
