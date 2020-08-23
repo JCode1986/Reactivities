@@ -8,6 +8,7 @@
 * Entity Framework
 * Sqlite
 * Visual Studio
+  * Extensions: SQLite/SQL Server Compact Toolbox
 * C#
 * Typescript
 
@@ -55,8 +56,9 @@ dotnet run
 
 
 ### Change Log
+* 1.4 *Database created; SQLite/SQL Server Compact Toolbox extension installed to view database* - 08/22/2020
 * 1.3 *Initial migration success* - 08/22/2020
-* 1.2 *local host routes operable, and getting back data* - 08/22/2020
+* 1.2 *Local host routes operable, and getting back data* - 08/22/2020
 * 1.1 *Created projects (API, Application, Persistence, and Domain); projects added to sln.file, and references added* - 08/22/2020
 
 ### Resources
