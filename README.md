@@ -26,6 +26,7 @@
   * *reference* - None
 
 ### Change Log
+* 1.2 *local host routes operable, and getting back data* - 08/22/2020
 * 1.1 *Created projects (API, Application, Persistence, and Domain); projects added to sln.file, and references added* - 08/22/2020
 
 ### Resources
