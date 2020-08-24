@@ -9,7 +9,8 @@
 * Sqlite
 * Visual Studio
   * Extensions: SQLite/SQL Server Compact Toolbox
-* Axios 
+* Axios
+* MediatR 
 * MobX
 * SignalR
 * C#
@@ -79,6 +80,10 @@ dotnet run
 <details>
 <summary>CRUD .Net Core using CQRS + Mediator pattern</summary>
 
+* 1654: 08/24/2020 *Created `ActivitiesController.cs` and added MediatR as a service in `startup.cs`; successfully query to API to retrieve all activities*
+* 1638: 08/24/2020 *Created `Activity Folder` in Application project with `List.cs`; created query handler with MediatR*
+* 1624: 08/24/2020 *Installed `MediatR.Extensions.Microsoft.Dependancy Injection` Nuget package to Application project*
+* 1501: 08/24/2020 *Seeded activities to database*
 * 0000: 08/24/2020 *`Activity.cs` added in Domain project, added Activity Entity, and successfully migrated*
 
 </details>
