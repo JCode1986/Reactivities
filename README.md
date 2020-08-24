@@ -25,7 +25,7 @@
 ---
 ## Useful dotnet commands
 * `dotnet -h` - list of all available dotnet commands 
-* `dotnet ef migrations add <name> -p <path> -s <path>` - adds new migrations to one or more projects
+* `dotnet ef migrations add <name> -p <project> -s <project>` - adds new migrations to one or more projects; `-p` for projects, and `-s` for startup project
 * `dotnet watch run` - command works inside context of the startup project; creates database and runs application
 
 ## Useful react commands
@@ -74,6 +74,13 @@ dotnet run
 
 
 ## Change Log
+
+<details>
+<summary>CRUD .Net Core using CQRS + Mediator pattern</summary>
+
+* 0000: 08/24/2020 *`Activity.cs` added in Domain project, added Activity Entity, and successfully migrated*
+
+</details>
 
 <details>
 <summary>Client Skeleton</summary>
