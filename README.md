@@ -73,15 +73,27 @@ dotnet run
 
 
 ## Change Log
-#### Client Skeleton
-* 1.7
-#### API Skeleton
-* 1.6 *Succesfully queried from database utilizing postman* - 08/23/2020
-* 1.5 *Upgraded EF Core Tools Version from 3.1.2 to 3.1.7, and succesfully seeded data* - 08/22/2020
-* 1.4 *Database created; SQLite/SQL Server Compact Toolbox extension installed to view database* - 08/22/2020
-* 1.3 *Initial migration success* - 08/22/2020
-* 1.2 *Local host routes operable, and getting back data* - 08/22/2020
-* 1.1 *Created projects (API, Application, Persistence, and Domain); projects added to sln.file, and references added* - 08/22/2020
+
+<details>
+<summary>Client Skeleton</summary>
+
+* 2041: 08/23/2020 *Installed axios; added CORS in `startup.cs`; Client side successfully fetches data from API*
+* 1307: 08/23/2020 *React set up complete*
+
+</details>
+
+<details>
+<summary>API Skeleton</summary>
+
+* 0203: 08/23/2020 *Succesfully queried from database utilizing postman*
+* 2302: 08/22/2020 *Upgraded EF Core Tools Version from 3.1.2 to 3.1.7, and succesfully seeded data*
+* 2128: 08/22/2020 *Database created; SQLite/SQL Server Compact Toolbox extension installed to view database*
+* 2034: 08/22/2020 *Initial migration success*
+* 1837: 08/22/2020 *Local host routes operable, and getting back data*
+* 1421: 08/22/2020 *Created projects (API, Application, Persistence, and Domain); projects added to sln.file, and references added*
+
+</details>
+
 ---
 ### Resources
 * Udemy
