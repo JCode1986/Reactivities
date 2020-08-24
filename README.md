@@ -26,6 +26,7 @@
 ## Useful dotnet commands
 * `dotnet -h` - list of all available dotnet commands 
 * `dotnet ef migrations add <name> -p <project> -s <project>` - adds new migrations to one or more projects; `-p` for projects, and `-s` for startup project
+* `Update-Database` - updates the database
 * `dotnet watch run` - command works inside context of the startup project; creates database and runs application
 
 ## Useful react commands
