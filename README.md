@@ -9,13 +9,14 @@
 * Sqlite
 * Visual Studio
   * Extensions: SQLite/SQL Server Compact Toolbox
-* Windows Powershell
-* Postman
 * Axios 
 * MobX
 * SignalR
 * C#
 * Typescript
+* Windows Powershell
+* Postman
+* React Developer Tools
 ---
 
 ## Versions
@@ -77,6 +78,7 @@ dotnet run
 <details>
 <summary>Client Skeleton</summary>
 
+* 2107: 08/23/2020 *Installed semantic ui react*
 * 2041: 08/23/2020 *Installed axios; added CORS in `startup.cs`; Client side successfully fetches data from API*
 * 1307: 08/23/2020 *React set up complete*
 
@@ -97,3 +99,4 @@ dotnet run
 ---
 ### Resources
 * Udemy
+* [Semantic UI React](https://react.semantic-ui.com/)
