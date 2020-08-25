@@ -28,5 +28,16 @@ namespace API.Controllers
         {
             return await _mediator.Send(new List.Query());
         }
+
+        /// <summary>
+        /// Returns a single activity based on id given
+        /// </summary>
+        /// <param name="id">Guid</param>
+        /// <returns>activity</returns>
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Activity>> Details(Guid id)
+        {
+            return await _mediator.Send(new Details.Query{Id = id});
+        }
     }
 }

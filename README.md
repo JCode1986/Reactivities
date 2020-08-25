@@ -80,6 +80,7 @@ dotnet run
 <details>
 <summary>CRUD .Net Core using CQRS + Mediator pattern</summary>
 
+* 1714: 08/24/2020 *Created `Details.cs` in `Application folder`, and detail handler in controllers; successfully query a single activity*
 * 1654: 08/24/2020 *Created `ActivitiesController.cs` and added MediatR as a service in `startup.cs`; successfully query to API to retrieve all activities*
 * 1638: 08/24/2020 *Created `Activity Folder` in Application project with `List.cs`; created query handler with MediatR*
 * 1624: 08/24/2020 *Installed `MediatR.Extensions.Microsoft.Dependancy Injection` Nuget package to Application project*
