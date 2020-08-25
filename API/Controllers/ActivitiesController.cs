@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace API.Controllers
@@ -27,6 +28,28 @@ namespace API.Controllers
         public async Task<ActionResult<List<Activity>>> List()
         {
             return await _mediator.Send(new List.Query());
+        }
+
+        /// <summary>
+        /// Returns a single activity based on id given
+        /// </summary>
+        /// <param name="id">Guid</param>
+        /// <returns>activity</returns>
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Activity>> Details(Guid id)
+        {
+            return await _mediator.Send(new Details.Query{Id = id});
+        }
+
+        /// <summary>
+        /// Creates an activity
+        /// </summary>
+        /// <param name="command"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<ActionResult<Unit>> Create(Create.Command command)
+        {
+            return await _mediator.Send(command);
         }
     }
 }
