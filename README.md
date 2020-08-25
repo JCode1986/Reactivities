@@ -76,6 +76,12 @@ dotnet run
 
 
 ## Change Log
+<details>
+<summary>CRUD React</summary>
+
+* 
+
+</details>
 
 <details>
 <summary>CRUD .Net Core using CQRS + Mediator pattern</summary>
