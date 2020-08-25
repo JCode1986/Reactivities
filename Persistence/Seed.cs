@@ -2,12 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Persistence
 {
     public class Seed
     {
+        /// <summary>
+        /// Drop table if there are bad data, and this method will seed datas when starting the application
+        /// </summary>
+        /// <param name="context"></param>
         public static void SeedData(DataContext context)
         {
             if (!context.Activities.Any())
