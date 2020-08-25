@@ -42,13 +42,26 @@ namespace API.Controllers
         }
 
         /// <summary>
-        /// Creates an activity
+        /// Creates an activity; Unit type is an empty object
         /// </summary>
-        /// <param name="command"></param>
+        /// <param name="command">Command class in Create class</param>
         /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<Unit>> Create(Create.Command command)
         {
+            return await _mediator.Send(command);
+        }
+
+     /// <summary>
+     /// Edit an activity based on ID
+     /// </summary>
+     /// <param name="id">Guid</param>
+     /// <param name="command">Command class in Edit class</param>
+     /// <returns></returns>
+        [HttpPut("{id}")]
+        public async Task<ActionResult<Unit>> Edit(Guid id, Edit.Command command)
+        {
+            command.Id = id;
             return await _mediator.Send(command);
         }
     }

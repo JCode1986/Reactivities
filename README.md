@@ -80,6 +80,7 @@ dotnet run
 <details>
 <summary>CRUD .Net Core using CQRS + Mediator pattern</summary>
 
+* 1930: 08/24/2020 *Created `Edit.cs` in application folder, and edit handler in contollers; successfully edit an activity*
 * 1825: 08/24/2020 *Created `Create.cs` in application folder, and create hanlder in controllers; successfully create an acitivity*
 * 1714: 08/24/2020 *Created `Details.cs` in `Application folder`, and detail handler in controllers; successfully query a single activity*
 * 1654: 08/24/2020 *Created `ActivitiesController.cs` and added MediatR as a service in `startup.cs`; successfully query to API to retrieve all activities*
