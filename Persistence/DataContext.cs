@@ -1,8 +1,5 @@
 ﻿using Domain;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Diagnostics;
-using Activity = Domain.Activity;
 
 namespace Persistence
 {

@@ -10,7 +10,7 @@
 * Visual Studio
   * Extensions: SQLite/SQL Server Compact Toolbox
 * Axios
-* MediatR 
+* MediatR / CQRS 
 * MobX
 * SignalR
 * C#
@@ -80,10 +80,11 @@ dotnet run
 <details>
 <summary>CRUD .Net Core using CQRS + Mediator pattern</summary>
 
-* 1930: 08/24/2020 *Created `Edit.cs` in application folder, and edit handler in contollers; successfully edit an activity*
-* 1825: 08/24/2020 *Created `Create.cs` in application folder, and create hanlder in controllers; successfully create an acitivity*
-* 1714: 08/24/2020 *Created `Details.cs` in `Application folder`, and detail handler in controllers; successfully query a single activity*
-* 1654: 08/24/2020 *Created `ActivitiesController.cs` and added MediatR as a service in `startup.cs`; successfully query to API to retrieve all activities*
+* 1945: 08/24/2020 *Created `Delete.cs` in application folder, and delete handler in contollers; can successfully delete an activity; removed unnecessary using in files*
+* 1930: 08/24/2020 *Created `Edit.cs` in application folder, and edit handler in contollers; can successfully edit an activity*
+* 1825: 08/24/2020 *Created `Create.cs` in application folder, and create hanlder in controllers; can successfully create an acitivity*
+* 1714: 08/24/2020 *Created `Details.cs` in `Application folder`, and detail handler in controllers; can successfully query a single activity*
+* 1654: 08/24/2020 *Created `ActivitiesController.cs` and added MediatR as a service in `startup.cs`; can successfully query to API to retrieve all activities*
 * 1638: 08/24/2020 *Created `Activity Folder` in Application project with `List.cs`; created query handler with MediatR*
 * 1624: 08/24/2020 *Installed `MediatR.Extensions.Microsoft.Dependancy Injection` Nuget package to Application project*
 * 1501: 08/24/2020 *Seeded activities to database*

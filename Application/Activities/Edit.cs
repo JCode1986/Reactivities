@@ -1,8 +1,6 @@
 ﻿using MediatR;
 using Persistence;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -30,6 +28,13 @@ namespace Application.Activities
             {
                 _context = context;
             }
+
+            /// <summary>
+            /// Edits an activity according to ID
+            /// </summary>
+            /// <param name="request">Command</param>
+            /// <param name="cancellationToken">CancellationToken</param>
+            /// <returns></returns>
             public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
             {
                 var activity = await _context.Activities.FindAsync(request.Id);
