@@ -1,6 +1,7 @@
 ﻿using Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Persistence;
 using SQLitePCL;
 using System;
@@ -24,14 +25,14 @@ namespace Application.Activities
                 _context = context;
             }
             /// <summary>
-            /// Get all activitiesin database
+            /// Get all activities in database
             /// </summary>
             /// <param name="request">Query</param>
             /// <param name="cancellationToken">CancellationToken</param>
             /// <returns>list of activities</returns>
             public async Task<List<Activity>> Handle(Query request, CancellationToken cancellationToken)
             {
-                var activities = await _context.Activities.ToListAsync();
+                var activities = await _context.Activities.ToListAsync(cancellationToken);
                 return activities;
             }
         }
