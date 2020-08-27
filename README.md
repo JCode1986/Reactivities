@@ -75,10 +75,11 @@ dotnet run
 ## Pages
 
 
-## Change Log
+## Log
 <details>
 <summary>CRUD React</summary>
 
+* 0203: 08/27/2020 *Added images to `assets folder`; created `NavBar.tsx` with component*
 * 0048: 08/25/2020 *Folder structure organized; added `activity.ts` with structure of activity object in `models folder`; moved `app.tsx` and `styles.css` to `layout folder`; hook state and hook effect added to retrieve all activities in `App.tsx`*
 
 </details>
