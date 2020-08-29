@@ -35,7 +35,7 @@
 ## Projects
 
 ### Web API
-* **API** - receives and responds to http requests
+* **API** (start up project) - receives and responds to http requests
   * *reference* - Application
 
 ### Libraries

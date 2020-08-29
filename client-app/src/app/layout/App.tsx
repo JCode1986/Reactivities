@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
-import { Header, Icon, List } from 'semantic-ui-react'
+import { Header, Icon, List, Container } from 'semantic-ui-react'
 import { IActivity } from '../../models/activity';
 import NavBar from '../../features/nav/NavBar';
+import ActivityDashboard from '../../features/activities/dashboard/ActivityDashboard';
 
 //component takes in props and state
 const App = () => {
@@ -23,13 +24,12 @@ const App = () => {
     }, []);
 
       return (
-          <div>
+          <Fragment>
               <NavBar /> 
-              <List>
-                  {activities.map((activity) => (
-                      <List.Item key={activity.id}>{activity.title}</List.Item>))}
-              </List>
-        </div>
+              <Container style={{marginTop: '7em'}}>
+                  <ActivityDashboard activities={activities} />
+              </Container>
+        </Fragment>
       );
 }
 
