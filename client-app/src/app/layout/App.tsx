@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
-import { Header, Icon, List, Container, Input } from 'semantic-ui-react'
+import { Container } from 'semantic-ui-react'
 import { IActivity } from '../../models/activity';
 import NavBar from '../../features/nav/NavBar';
 import ActivityDashboard from '../../features/activities/dashboard/ActivityDashboard';
@@ -10,13 +10,33 @@ const App = () => {
     //hook state- [array with state, and function to set state] = initial state with object type
     const [activities, setActivities] = useState<IActivity[]>([]);
 
-    // `|` union type
+    // state for specific activity; `|` union type
     const [selectedActivity, setSelectedActivity] = useState<IActivity | null>(null);
+
+    // state property for edit mode; if using a boolean, no need to specify type
+    const [editMode, setEditMode] = useState(false);
 
     //function to handle selected activity; will be passed down to activity list
     //activity dashboard will act as middle man
     const handleSelectActivity = (id: string) => {
         setSelectedActivity(activities.filter(a => a.id === id)[0])
+    }
+
+    const handleOpenCreateForm = () => {
+        setSelectedActivity(null);
+        setEditMode(true);
+    }
+
+    const handleCreateActivitity = (activity: IActivity) => {
+        setActivities([...activities, activity]);
+        setSelectedActivity(activity);
+        setEditMode(false);
+    }
+
+    const handleEditActivity = (activity: IActivity) => {
+        setActivities([...activities.filter(a => a.id !== activity.id), activity])
+        setSelectedActivity(activity);
+        setEditMode(false);
     }
 
     //3 component life cycle methods in one
@@ -34,12 +54,17 @@ const App = () => {
 
       return (
           <Fragment>
-              <NavBar /> 
+              <NavBar openCreateForm={handleOpenCreateForm}/> 
               <Container style={{marginTop: '7em'}}>
                   <ActivityDashboard
                       activities={activities}
                       selectActivity={handleSelectActivity}
                       selectedActivity={selectedActivity}
+                      editMode={editMode}
+                      setEditMode={setEditMode}
+                      setSelectedActivity={setSelectedActivity}
+                      createActivity={handleCreateActivitity}
+                      editActivity={handleEditActivity}
                   />
               </Container>
         </Fragment>

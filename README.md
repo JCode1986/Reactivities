@@ -79,6 +79,8 @@ dotnet run
 <details>
 <summary>CRUD React</summary>
 
+* 2320: 08/30/2020 *Create and update functionality added; still need to work on minor fixes*
+* 2220: 08/30/2020 *Added functions to handle creates, edits and cancels*
 * 2020: 08/30/2020 *Can now view details of specific activity*
 * 1943: 08/30/2020 *Added `activites folder` with folders - `dashboard`, `details`, & `form`; components added in folders to retrieve data from back end
 * 0203: 08/27/2020 *Added images to `assets folder`; created `NavBar.tsx` with component*
