@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
-import { Header, Icon, List, Container } from 'semantic-ui-react'
+import { Header, Icon, List, Container, Input } from 'semantic-ui-react'
 import { IActivity } from '../../models/activity';
 import NavBar from '../../features/nav/NavBar';
 import ActivityDashboard from '../../features/activities/dashboard/ActivityDashboard';
@@ -9,6 +9,15 @@ import ActivityDashboard from '../../features/activities/dashboard/ActivityDashb
 const App = () => {
     //hook state- [array with state, and function to set state] = initial state with object type
     const [activities, setActivities] = useState<IActivity[]>([]);
+
+    // `|` union type
+    const [selectedActivity, setSelectedActivity] = useState<IActivity | null>(null);
+
+    //function to handle selected activity; will be passed down to activity list
+    //activity dashboard will act as middle man
+    const handleSelectActivity = (id: string) => {
+        setSelectedActivity(activities.filter(a => a.id === id)[0])
+    }
 
     //3 component life cycle methods in one
     //hook effect takes in a function
@@ -27,7 +36,11 @@ const App = () => {
           <Fragment>
               <NavBar /> 
               <Container style={{marginTop: '7em'}}>
-                  <ActivityDashboard activities={activities} />
+                  <ActivityDashboard
+                      activities={activities}
+                      selectActivity={handleSelectActivity}
+                      selectedActivity={selectedActivity}
+                  />
               </Container>
         </Fragment>
       );
