@@ -40,6 +40,10 @@ const App = () => {
         setEditMode(false);
     }
 
+    const handleDeleteActivity = (id: string) => {
+        setActivities([...activities.filter(a => a.id !== id)])
+}
+
     //3 component life cycle methods in one
     //hook effect takes in a function
     useEffect(() => {
@@ -71,6 +75,7 @@ const App = () => {
                       setSelectedActivity={setSelectedActivity}
                       createActivity={handleCreateActivitity}
                       editActivity={handleEditActivity}
+                      deleteActivity={handleDeleteActivity}
                   />
               </Container>
         </Fragment>

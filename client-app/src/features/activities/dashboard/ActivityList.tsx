@@ -1,13 +1,18 @@
 import React from 'react';
-import { Item, Button, Segment, Label, Image, Select } from 'semantic-ui-react';
+import { Item, Button, Segment, Label } from 'semantic-ui-react';
 import { IActivity } from '../../../models/activity';
 
 interface IProps {
     activities: IActivity[];
     selectActivity: (id: string) => void;
+    deleteActivity: (id: string) => void;
 }
 
-const ActivityList: React.FC<IProps> = ({activities, selectActivity}) => {
+const ActivityList: React.FC<IProps> = ({
+    activities,
+    selectActivity,
+    deleteActivity
+}) => {
     return (
         //cleaing clears any other floating contents
         <Segment clearing>
@@ -27,6 +32,12 @@ const ActivityList: React.FC<IProps> = ({activities, selectActivity}) => {
                                     floated='right'
                                     content='View'
                                     color='blue'
+                                />
+                                <Button
+                                    onClick={() => deleteActivity(activity.id)}
+                                    floated='right'
+                                    content='Delete'
+                                    color='red'
                                 />
                                 <Label basic content={activity.category} />
                             </Item.Extra>

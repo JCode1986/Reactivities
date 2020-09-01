@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, List, Select } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 import { IActivity } from '../../../models/activity';
 import ActivityList from './ActivityList';
 import ActivityDetails from '../details/ActivityDetails';
@@ -16,6 +16,7 @@ interface IProps {
     setSelectedActivity: (activity: IActivity | null) => void;
     createActivity: (activity: IActivity) => void;
     editActivity: (activity: IActivity) => void;
+    deleteActivity: (id: string) => void;
 }
 
 //React.FC<IProps> is a type; argrument is deconstructed and activies can be accessed without acessing props first
@@ -27,7 +28,8 @@ const ActivityDashboard: React.FC<IProps> = ({
     setEditMode,
     setSelectedActivity,
     createActivity,
-    editActivity
+    editActivity,
+    deleteActivity
 }) => {
     return (
         <Grid>
@@ -35,6 +37,7 @@ const ActivityDashboard: React.FC<IProps> = ({
                 <ActivityList
                     activities={activities}
                     selectActivity={selectActivity}
+                    deleteActivity={deleteActivity}
                 />
 
             </Grid.Column>
