@@ -79,6 +79,7 @@ dotnet run
 <details>
 <summary>CRUD React</summary>
 
+* 2140: 08/31/2020 *Fixed issues with the dates in the form*
 * 2320: 08/30/2020 *Create and update functionality added; still need to work on minor fixes*
 * 2220: 08/30/2020 *Added functions to handle creates, edits and cancels*
 * 2020: 08/30/2020 *Can now view details of specific activity*
