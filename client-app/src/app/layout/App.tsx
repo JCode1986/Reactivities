@@ -19,7 +19,8 @@ const App = () => {
     //function to handle selected activity; will be passed down to activity list
     //activity dashboard will act as middle man
     const handleSelectActivity = (id: string) => {
-        setSelectedActivity(activities.filter(a => a.id === id)[0])
+        setSelectedActivity(activities.filter(a => a.id === id)[0]);
+        setEditMode(false);
     }
 
     const handleOpenCreateForm = () => {
@@ -39,14 +40,23 @@ const App = () => {
         setEditMode(false);
     }
 
+    const handleDeleteActivity = (id: string) => {
+        setActivities([...activities.filter(a => a.id !== id)])
+}
+
     //3 component life cycle methods in one
     //hook effect takes in a function
     useEffect(() => {
         //get activities
         axios.get<IActivity[]>('http://localhost:5000/api/activities')
             .then((response) => {
+                let activities: IActivity[] = [];
+                response.data.forEach(activity => {
+                    activity.date = activity.date.split('.')[0];
+                    activities.push(activity);
+                })
                 //populates state and set state (activities)
-                setActivities(response.data)
+                setActivities(activities)
             })
         //add second parameter (empty array) to ensure useEffect runs one time only and does not continously run 
         //will send component into a loop without a second parameter
@@ -65,6 +75,7 @@ const App = () => {
                       setSelectedActivity={setSelectedActivity}
                       createActivity={handleCreateActivitity}
                       editActivity={handleEditActivity}
+                      deleteActivity={handleDeleteActivity}
                   />
               </Container>
         </Fragment>
