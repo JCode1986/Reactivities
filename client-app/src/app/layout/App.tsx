@@ -5,7 +5,8 @@ import NavBar from '../../features/nav/NavBar';
 import ActivityDashboard from '../../features/activities/dashboard/ActivityDashboard';
 import agent from '../api/agent';
 import LoadingComponent from './LoadingComponent';
-import ActivityStore from '../stores/activityStore'
+import ActivityStore from '../stores/activityStore';
+import { observer } from 'mobx-react-lite';
 
 //component takes in props and state
 const App = () => {
@@ -70,29 +71,19 @@ const App = () => {
     //3 component life cycle methods in one
     //hook effect takes in a function
     useEffect(() => {
-        agent.Activities.list()
-            .then((response) => {
-                let activities: IActivity[] = [];
-                response.forEach(activity => {
-                    activity.date = activity.date.split('.')[0];
-                    activities.push(activity);
-                })
-                //populates state and set state (activities)
-                setActivities(activities)
-                //after activities received
-            }).then(() => setLoading(false));
-        //add second parameter (empty array) to ensure useEffect runs one time only and does not continously run 
-        //will send component into a loop without a second parameter
-    }, []);
+       //use activity store to access functions
+        activityStore.loadActivities();
+        //dependency array
+    }, [activityStore]);
 
-    if (loading) return <LoadingComponent content='Loading activities...' />
+    if (activityStore.loadingInitial) return <LoadingComponent content='Loading activities...' />
 
       return (
           <Fragment>
               <NavBar openCreateForm={handleOpenCreateForm}/> 
               <Container style={{ marginTop: '7em' }}>
                   <ActivityDashboard
-                      activities={activities}
+                      activities={activityStore.activities}
                       selectActivity={handleSelectActivity}
                       selectedActivity={selectedActivity}
                       editMode={editMode}
@@ -109,4 +100,6 @@ const App = () => {
       );
 }
 
-export default App;
+//observer is a higher order component
+//this will allow the component to observer the observable from the store
+export default observer(App);
