@@ -80,9 +80,10 @@ dotnet run
 <details>
 <summary>Data Persistence - Axios</summary>
 
-
+* 2132: *Added loading indicator for submitting data*
+* 2114: 09/01/2020 *Added `LoadingComponent.tsx` in `src` -> `app` -> `layout`*
 * 2104: 09/01/2020 *Added delay to API methods to simulate production stage*
-* 2058: 09/01/2020 *client side can now use CRUD successfuly with API*
+* 2058: 09/01/2020 *client side can now use CRUD successfully with API*
 * 2050: 09/01/2020 *listing activities from API successful*
 * 2041: 09/01/2020 *`agent.ts` file setup in `app` -> `api` folder*
 

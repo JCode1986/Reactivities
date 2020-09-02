@@ -6,12 +6,14 @@ interface IProps {
     activities: IActivity[];
     selectActivity: (id: string) => void;
     deleteActivity: (id: string) => void;
+    submitting: boolean
 }
 
 const ActivityList: React.FC<IProps> = ({
     activities,
     selectActivity,
-    deleteActivity
+    deleteActivity,
+    submitting
 }) => {
     return (
         //cleaing clears any other floating contents
@@ -34,6 +36,8 @@ const ActivityList: React.FC<IProps> = ({
                                     color='blue'
                                 />
                                 <Button
+                                    name={activity.id}
+                                    loading={submitting}
                                     onClick={() => deleteActivity(activity.id)}
                                     floated='right'
                                     content='Delete'

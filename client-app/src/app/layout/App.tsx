@@ -4,6 +4,7 @@ import { IActivity } from '../../models/activity';
 import NavBar from '../../features/nav/NavBar';
 import ActivityDashboard from '../../features/activities/dashboard/ActivityDashboard';
 import agent from '../api/agent';
+import LoadingComponent from './LoadingComponent';
 
 //component takes in props and state
 const App = () => {
@@ -15,6 +16,12 @@ const App = () => {
 
     // state property for edit mode; if using a boolean, no need to specify type
     const [editMode, setEditMode] = useState(false);
+
+    //loading
+    const [loading, setLoading] = useState(true);
+
+    //submit loading
+    const [submitting, setSubmitting] = useState(false);
 
     //function to handle selected activity; will be passed down to activity list
     //activity dashboard will act as middle man
@@ -29,31 +36,34 @@ const App = () => {
     }
 
     const handleCreateActivitity = (activity: IActivity) => {
+        setSubmitting(true);
         agent.Activities.create(activity).then(() => {
             setActivities([...activities, activity]);
             setSelectedActivity(activity);
             setEditMode(false);
-        })
+        }).then(() => setSubmitting(false))
     }
 
     const handleEditActivity = (activity: IActivity) => {
+        setSubmitting(true);
         agent.Activities.update(activity).then(() => {
             setActivities([...activities.filter(a => a.id !== activity.id), activity])
             setSelectedActivity(activity);
             setEditMode(false);
-        })
+        }).then(() => setSubmitting(false))
     }
 
     const handleDeleteActivity = (id: string) => {
+        setSubmitting(true);
         agent.Activities.delete(id).then(() => {
             setActivities([...activities.filter(a => a.id !== id)])
-        })
+        }).then(() => setSubmitting(false))
     }
 
     //3 component life cycle methods in one
     //hook effect takes in a function
     useEffect(() => {
-            agent.Activities.list()
+        agent.Activities.list()
             .then((response) => {
                 let activities: IActivity[] = [];
                 response.forEach(activity => {
@@ -62,10 +72,13 @@ const App = () => {
                 })
                 //populates state and set state (activities)
                 setActivities(activities)
-            })
+                //after activities received
+            }).then(() => setLoading(false));
         //add second parameter (empty array) to ensure useEffect runs one time only and does not continously run 
         //will send component into a loop without a second parameter
     }, []);
+
+    if (loading) return <LoadingComponent content='Loading activities...' />
 
       return (
           <Fragment>
@@ -81,6 +94,7 @@ const App = () => {
                       createActivity={handleCreateActivitity}
                       editActivity={handleEditActivity}
                       deleteActivity={handleDeleteActivity}
+                      submitting={submitting}
                   />
               </Container>
         </Fragment>

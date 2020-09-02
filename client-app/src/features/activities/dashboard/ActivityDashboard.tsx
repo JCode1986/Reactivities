@@ -17,6 +17,7 @@ interface IProps {
     createActivity: (activity: IActivity) => void;
     editActivity: (activity: IActivity) => void;
     deleteActivity: (id: string) => void;
+    submitting: boolean
 }
 
 //React.FC<IProps> is a type; argrument is deconstructed and activies can be accessed without acessing props first
@@ -29,7 +30,8 @@ const ActivityDashboard: React.FC<IProps> = ({
     setSelectedActivity,
     createActivity,
     editActivity,
-    deleteActivity
+    deleteActivity,
+    submitting
 }) => {
     return (
         <Grid>
@@ -55,6 +57,7 @@ const ActivityDashboard: React.FC<IProps> = ({
                     activity={selectedActivity!}
                     createActivity={createActivity}
                     editActivity={editActivity}
+                    submitting={submitting}
                 />}
             </Grid.Column>
         </Grid>
