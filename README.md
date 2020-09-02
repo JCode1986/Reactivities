@@ -79,10 +79,18 @@ dotnet run
 ## Log
 
 <details>
+<summary>MobX refactor</summary>
+
+* 0043: 09/02/2020 *Mobx setup complete `src` -> `app` -> `stores` -> `activityStore.ts`*
+* 0026: 09/02/2020 *`npm install mobx mobx-react-lite` for state management (functional components)*
+
+</details>
+
+<details>
 <summary>Data Persistence - Axios</summary>
 
-* 2151: *Isolated loading indicator for delete button*
-* 2132: *Added loading indicator for submitting data*
+* 2151: 09/01/2020 *Isolated loading indicator for delete button*
+* 2132: 09/01/2020 *Added loading indicator for submitting data*
 * 2114: 09/01/2020 *Added `LoadingComponent.tsx` in `src` -> `app` -> `layout`*
 * 2104: 09/01/2020 *Added delay to API methods to simulate production stage*
 * 2058: 09/01/2020 *client side can now use CRUD successfully with API*
