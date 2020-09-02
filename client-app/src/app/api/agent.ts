@@ -7,12 +7,16 @@ axios.defaults.baseURL = 'http://localhost:5000/api';
 
 const responseBody = (response: AxiosResponse) => response.data;
 
+//delay requests from API; currying
+const sleep = (ms: number) => (response: AxiosResponse) =>
+    new Promise<AxiosResponse>(resolve => setTimeout(() => resolve(response), ms));
+
 //request object
 const requests = {
-    get: (url: string) => axios.get(url).then(responseBody),
-    post: (url: string, body: {}) => axios.post(url, body).then(responseBody),
-    put: (url: string, body: {}) => axios.put(url, body).then(responseBody),
-    del: (url: string) => axios(url).then(responseBody)
+    get: (url: string) => axios.get(url).then(sleep(1000)).then(responseBody),
+    post: (url: string, body: {}) => axios.post(url, body).then(sleep(1000)).then(responseBody),
+    put: (url: string, body: {}) => axios.put(url, body).then(sleep(1000)).then(responseBody),
+    del: (url: string) => axios(url).then(sleep(1000)).then(responseBody)
 }
 
 //activity requests
