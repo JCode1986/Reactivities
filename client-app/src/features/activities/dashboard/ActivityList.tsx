@@ -1,6 +1,7 @@
 import React, { SyntheticEvent } from 'react';
 import { Item, Button, Segment, Label } from 'semantic-ui-react';
-import { IActivity } from '../../../models/activity';
+import { IActivity } from '../../../app/models/activity';
+import { observer } from 'mobx-react-lite';
 
 interface IProps {
     activities: IActivity[];
@@ -55,4 +56,4 @@ const ActivityList: React.FC<IProps> = ({
     );
 }
 
-export default ActivityList;
+export default observer(ActivityList);
