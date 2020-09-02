@@ -29,6 +29,7 @@
 * `dotnet ef migrations add <name> -p <project> -s <project>` - adds new migrations to one or more projects; `-p` for projects, and `-s` for startup project
 * `Update-Database` - updates the database
 * `dotnet watch run` - command works inside context of the startup project; creates database and runs application
+* `dotnet ef database drop -p <project name (Persistence)> -s <start up project (API)>` - delete database from API
 
 ## Useful react commands
  * `npm start` - starts react app
@@ -76,6 +77,20 @@ dotnet run
 
 
 ## Log
+
+<details>
+<summary>Data Persistence - Axios</summary>
+
+* 2151: *Isolated loading indicator for delete button*
+* 2132: *Added loading indicator for submitting data*
+* 2114: 09/01/2020 *Added `LoadingComponent.tsx` in `src` -> `app` -> `layout`*
+* 2104: 09/01/2020 *Added delay to API methods to simulate production stage*
+* 2058: 09/01/2020 *client side can now use CRUD successfully with API*
+* 2050: 09/01/2020 *listing activities from API successful*
+* 2041: 09/01/2020 *`agent.ts` file setup in `app` -> `api` folder*
+
+</details>
+
 <details>
 <summary>CRUD React</summary>
 
