@@ -76,6 +76,15 @@ dotnet run
 
 
 ## Log
+
+<details>
+<summary>Data Persistence - Axios</summary>
+
+* 2050: 09/01/2020 *listing activities from API successful*
+* 2041: 09/01/2020 *`agent.ts` file setup in `app` -> `api` folder*
+
+</details>
+
 <details>
 <summary>CRUD React</summary>
 

@@ -1,9 +1,9 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import axios from 'axios';
 import { Container } from 'semantic-ui-react'
 import { IActivity } from '../../models/activity';
 import NavBar from '../../features/nav/NavBar';
 import ActivityDashboard from '../../features/activities/dashboard/ActivityDashboard';
+import agent from '../api/agent';
 
 //component takes in props and state
 const App = () => {
@@ -47,11 +47,10 @@ const App = () => {
     //3 component life cycle methods in one
     //hook effect takes in a function
     useEffect(() => {
-        //get activities
-        axios.get<IActivity[]>('http://localhost:5000/api/activities')
+            agent.Activities.list()
             .then((response) => {
                 let activities: IActivity[] = [];
-                response.data.forEach(activity => {
+                response.forEach(activity => {
                     activity.date = activity.date.split('.')[0];
                     activities.push(activity);
                 })
