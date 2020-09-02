@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect, Fragment, SyntheticEvent } from 'react';
 import { Container } from 'semantic-ui-react'
 import { IActivity } from '../../models/activity';
 import NavBar from '../../features/nav/NavBar';
@@ -22,6 +22,8 @@ const App = () => {
 
     //submit loading
     const [submitting, setSubmitting] = useState(false);
+
+    const [target, setTarget] = useState('');
 
     //function to handle selected activity; will be passed down to activity list
     //activity dashboard will act as middle man
@@ -53,8 +55,9 @@ const App = () => {
         }).then(() => setSubmitting(false))
     }
 
-    const handleDeleteActivity = (id: string) => {
+    const handleDeleteActivity = (event: SyntheticEvent<HTMLButtonElement>, id: string) => {
         setSubmitting(true);
+        setTarget(event.currentTarget.name)
         agent.Activities.delete(id).then(() => {
             setActivities([...activities.filter(a => a.id !== id)])
         }).then(() => setSubmitting(false))
@@ -95,6 +98,7 @@ const App = () => {
                       editActivity={handleEditActivity}
                       deleteActivity={handleDeleteActivity}
                       submitting={submitting}
+                      target={target}
                   />
               </Container>
         </Fragment>
