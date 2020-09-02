@@ -80,6 +80,7 @@ dotnet run
 <details>
 <summary>Data Persistence - Axios</summary>
 
+* 2058: 09/01/2020 *client side can now use CRUD successfuly with API*
 * 2050: 09/01/2020 *listing activities from API successful*
 * 2041: 09/01/2020 *`agent.ts` file setup in `app` -> `api` folder*
 
