@@ -1,9 +1,7 @@
-import { observable, action } from 'mobx';
+import { observable, action, computed } from 'mobx';
 import { createContext } from 'react';
 import { IActivity } from '../models/activity';
 import agent from '../api/agent';
-import { error } from 'console';
-
 
 class ActivityStore {
     @observable activities: IActivity[] = [];
@@ -11,6 +9,10 @@ class ActivityStore {
     @observable loadingInitial = false;
     @observable editMode = false;
     @observable submitting = false;
+
+    @computed get activitiesByDate() {
+        return this.activities.sort((a, b) => Date.parse(a.date) - Date.parse(b.date))
+    }
 
     @action loadActivities = async () => {
         //MobX can mutate states unlike Redux
