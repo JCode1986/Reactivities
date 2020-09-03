@@ -81,6 +81,7 @@ dotnet run
 <details>
 <summary>MobX refactor</summary>
 
+* 2152: 09/02/2020 *Refactored create functionality to use store instead of passing props*
 * 2133: 09/02/2020 *Renders list of activites through store*
 * 0105: 09/02/2020 *Components requiring store access with observables converted to observers*
 * 0043: 09/02/2020 *Mobx setup complete `src` -> `app` -> `stores` -> `activityStore.ts`*

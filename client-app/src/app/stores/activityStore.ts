@@ -10,6 +10,7 @@ class ActivityStore {
     @observable selectedActivity: IActivity | undefined;
     @observable loadingInitial = false;
     @observable editMode = false;
+    @observable submitting = false;
 
     @action loadActivities = async () => {
         //MobX can mutate states unlike Redux
@@ -26,6 +27,25 @@ class ActivityStore {
             console.log(error);
             this.loadingInitial = false;
         }
+    }
+
+    @action createActivity = async (activity: IActivity) => {
+        this.submitting = true;
+        try {
+            await agent.Activities.create(activity);
+            this.activities.push(activity);
+            this.editMode = false;
+            this.submitting = false;
+        }
+        catch (error) {
+            this.submitting = false;
+            console.log(error);
+        }
+    };
+
+    @action openCreateForm = () => {
+        this.editMode = true;
+        this.selectedActivity = undefined;
     }
 
     @action selectActivity = (id: string) => {
