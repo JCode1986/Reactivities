@@ -81,6 +81,7 @@ dotnet run
 <details>
 <summary>MobX refactor</summary>
 
+* 2133: 09/02/2020 *Renders list of activites through store*
 * 0105: 09/02/2020 *Components requiring store access with observables converted to observers*
 * 0043: 09/02/2020 *Mobx setup complete `src` -> `app` -> `stores` -> `activityStore.ts`*
 * 0026: 09/02/2020 *`npm install mobx mobx-react-lite` for state management (functional components)*
