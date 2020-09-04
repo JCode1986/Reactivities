@@ -9,19 +9,13 @@ import ActivityStore from '../../../app/stores/activityStore'
 
 //required with typescript when passing down props
 interface IProps {
-    setEditMode: (editMode: boolean) => void;
-    setSelectedActivity: (activity: IActivity | null) => void;
-    editActivity: (activity: IActivity) => void;
     deleteActivity: (e: SyntheticEvent<HTMLButtonElement>, id: string) => void;
-    submitting: boolean
+    submitting: boolean;
     target: string
 }
 
 //React.FC<IProps> is a type; argrument is deconstructed and activies can be accessed without acessing props first
 const ActivityDashboard: React.FC<IProps> = ({
-    setEditMode,
-    setSelectedActivity,
-    editActivity,
     deleteActivity,
     submitting,
     target
@@ -40,18 +34,10 @@ const ActivityDashboard: React.FC<IProps> = ({
 
             </Grid.Column>
             <Grid.Column width={6}>
-                {selectedActivity && !editMode && (
-                    <ActivityDetails
-                        setEditMode={setEditMode}
-                        setSelectedActivity={setSelectedActivity}
-                    />
-                )}
+                {selectedActivity && !editMode && (<ActivityDetails />)}
                 {editMode && <ActivityForm
                     key={selectedActivity && selectedActivity.id || 0}
-                    setEditMode={setEditMode}
                     activity={selectedActivity!}
-                    editActivity={editActivity}
-                    submitting={submitting}
                 />}
             </Grid.Column>
         </Grid>
