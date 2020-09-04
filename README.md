@@ -84,6 +84,7 @@ dotnet run
 <details>
 <summary>MobX refactor</summary>
 
+* 1651: 09/05/2020 *Removed unused code*
 * 1644: 09/04/2020 *Delete functionality from store working*
 * 1635: 09/04/2020 *Edit funcionality and cancel button working (from store)*
 * 1611: 09/04/2020 *Utlizing observable map for activities instead of array*

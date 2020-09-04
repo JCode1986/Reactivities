@@ -1,6 +1,5 @@
-import React, { SyntheticEvent, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Grid } from 'semantic-ui-react';
-import { IActivity } from '../../../app/models/activity';
 import ActivityList from './ActivityList';
 import ActivityDetails from '../details/ActivityDetails';
 import ActivityForm from '../form/ActivityForm';
@@ -20,7 +19,7 @@ const ActivityDashboard: React.FC = () => {
             <Grid.Column width={6}>
                 {selectedActivity && !editMode && (<ActivityDetails />)}
                 {editMode && <ActivityForm
-                    key={selectedActivity && selectedActivity.id || 0}
+                    key={(selectedActivity && selectedActivity.id) || 0}
                     activity={selectedActivity!}
                 />}
             </Grid.Column>
