@@ -3,21 +3,24 @@
 ## Web Application
 
 ## Tools
-* ASP.Net Core
-* React
-* Entity Framework
-* Sqlite
-* Visual Studio
-  * Extensions: SQLite/SQL Server Compact Toolbox
-* Axios
-* MediatR / CQRS 
-* MobX
-* SignalR
-* C#
-* Typescript
-* Windows Powershell
-* Postman
-* React Developer Tools
+* [Visual Studio](https://visualstudio.microsoft.com/downloads/)
+  * [Extensions: SQLite/SQL Server Compact Toolbox](https://marketplace.visualstudio.com/items?itemName=ErikEJ.SQLServerCompactSQLiteToolbox)
+* [C#](https://docs.microsoft.com/en-us/dotnet/csharp/)
+* [Typescript](https://www.typescriptlang.org/docs/)
+* [Windows Powershell](https://docs.microsoft.com/en-us/powershell/)
+* [Git](https://git-scm.com/doc)
+* [Github](https://github.com/JCode1986)
+* [ASP.Net Core](https://dotnet.microsoft.com/learn/aspnet/what-is-aspnet-core)
+* [React](https://reactjs.org/docs/hello-world.html)
+    * [Semantic UI React](https://react.semantic-ui.com/)
+* [Entity Framework](https://docs.microsoft.com/en-us/ef/)
+* [Axios](https://www.npmjs.com/package/axios)
+* [MediatR](https://github.com/jbogard/MediatR/wiki)
+* [CQRS](https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs)
+* [MobX](https://mobx.js.org/README.html)
+* [SignalR](https://docs.microsoft.com/en-us/aspnet/signalr/overview/getting-started/introduction-to-signalr)
+* [Postman](https://www.postman.com/api-documentation-tool/)
+* [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
 ---
 
 ## Versions
@@ -35,11 +38,11 @@
  * `npm start` - starts react app
 ## Projects
 
-### Web API
+### Web API (C#)
 * **API** (start up project) - receives and responds to http requests
   * *reference* - Application
 
-### Libraries
+### Libraries (C#)
 * **Application** - processess the business logic
   * *references* - Domain & Persistence
 * **Persistence** - provides access to database
@@ -47,7 +50,7 @@
 * **Domain** - contains the business entities
   * *reference* - None
 
-### React
+### React (Typescript)
 * **client-app** - Client side
 ---
 
@@ -89,6 +92,7 @@ dotnet run
 * 0026: 09/02/2020 *`npm install mobx mobx-react-lite` for state management (functional components)*
 
 </details>
+
 
 <details>
 <summary>Data Persistence - Axios</summary>
@@ -156,4 +160,3 @@ dotnet run
 ---
 ### Resources
 * Udemy
-* [Semantic UI React](https://react.semantic-ui.com/)
