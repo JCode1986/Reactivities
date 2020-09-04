@@ -84,6 +84,7 @@ dotnet run
 <details>
 <summary>MobX refactor</summary>
 
+* 1611: 09/04/2020 *Utlizing observable map for activities instead of array*
 * 2326: 09/02/2020 *Added sort by date functionality for activities in store*
 * 2152: 09/02/2020 *Refactored create functionality to use store instead of passing props*
 * 2133: 09/02/2020 *Renders list of activites through store*
