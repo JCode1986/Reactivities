@@ -30,14 +30,6 @@ const App = () => {
 
     const [target, setTarget] = useState('');
 
-    const handleDeleteActivity = (event: SyntheticEvent<HTMLButtonElement>, id: string) => {
-        setSubmitting(true);
-        setTarget(event.currentTarget.name)
-        agent.Activities.delete(id).then(() => {
-            setActivities([...activities.filter(a => a.id !== id)])
-        }).then(() => setSubmitting(false))
-    }
-
     //3 component life cycle methods in one
     //hook effect takes in a function
     useEffect(() => {
@@ -52,11 +44,7 @@ const App = () => {
           <Fragment>
               <NavBar /> 
               <Container style={{ marginTop: '7em' }}>
-                  <ActivityDashboard
-                      deleteActivity={handleDeleteActivity}
-                      submitting={submitting}
-                      target={target}
-                  />
+                  <ActivityDashboard />
               </Container>
         </Fragment>
       );
