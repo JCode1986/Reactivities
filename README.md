@@ -84,6 +84,7 @@ dotnet run
 <details>
 <summary>MobX refactor</summary>
 
+* 2205: 09/07/2020 *Enabled MobX strict; utilizing `runInActions()` fot state changes after awaiting*
 * 1651: 09/05/2020 *Removed unused code*
 * 1644: 09/04/2020 *Delete functionality from store working*
 * 1635: 09/04/2020 *Edit funcionality and cancel button working (from store)*
