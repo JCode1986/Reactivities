@@ -13,6 +13,7 @@
 * [ASP.Net Core](https://dotnet.microsoft.com/learn/aspnet/what-is-aspnet-core)
 * [React](https://reactjs.org/docs/hello-world.html)
     * [Semantic UI React](https://react.semantic-ui.com/)
+    * [React Router](https://reactrouter.com/web/guides/quick-start)
 * [Entity Framework](https://docs.microsoft.com/en-us/ef/)
 * [Axios](https://www.npmjs.com/package/axios)
 * [MediatR](https://github.com/jbogard/MediatR/wiki)
@@ -36,6 +37,7 @@
 
 ## Useful react commands
  * `npm start` - starts react app
+ 
 ## Projects
 
 ### Web API (C#)
@@ -82,9 +84,18 @@ dotnet run
 ## Log
 
 <details>
+<summary>React Router</summary>
+
+* 2344: 09/07/2020 *Links added in `NavBar.tsx`*
+* 2335: 09/07/2020 *Routes setup in `App.tsx`*
+* 2322: 09/07/2020 *Installed `react-router-dom`, and imported in `index.tsx` file in `scr`*
+
+</details>
+
+<details>
 <summary>MobX refactor</summary>
 
-* 2205: 09/07/2020 *Enabled MobX strict; utilizing `runInActions()` fot state changes after awaiting*
+* 2205: 09/07/2020 *Enabled MobX strict mode; utilizing `runInActions()` fot state changes after awaiting*
 * 1651: 09/05/2020 *Removed unused code*
 * 1644: 09/04/2020 *Delete functionality from store working*
 * 1635: 09/04/2020 *Edit funcionality and cancel button working (from store)*
