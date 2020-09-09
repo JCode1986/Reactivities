@@ -86,6 +86,7 @@ dotnet run
 <details>
 <summary>React Router</summary>
 
+* 0124: 09/09/2020 *Added route parameters in `ActivityDetails.tsx`*
 * 2114: 09/08/2020 *Viewing detail and routing to a different page successful*
 * 2344: 09/07/2020 *Links added in `NavBar.tsx`*
 * 2335: 09/07/2020 *Routes setup in `App.tsx`*

@@ -39,5 +39,5 @@ const App = () => {
 }
 
 //observer is a higher order component
-//this will allow the component to observer the observable from the store
+//this will allow the component to observe the observable from the store
 export default observer(App);

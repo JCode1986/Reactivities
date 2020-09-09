@@ -9,7 +9,10 @@ interface DetailsParams {
     id: string
 }
 
-const ActivityDetails: React.FC<RouteComponentProps<DetailsParams>> = ({ match }) => {
+const ActivityDetails: React.FC<RouteComponentProps<DetailsParams>> = ({
+    match,
+    history
+}) => {
 
     const activityStore = useContext(ActivityStore);
     const {
@@ -40,8 +43,18 @@ const ActivityDetails: React.FC<RouteComponentProps<DetailsParams>> = ({ match }
             </Card.Content>
             <Card.Content extra>
                 <Button.Group widths={2}>
-                    <Button onClick={() => openEditForm(activity!.id)} basic color='blue' content='Edit' />  
-                    <Button onClick={cancelSelectedActivity} basic color='grey' content='Cancel' />
+                    <Button
+                        onClick={() => openEditForm(activity!.id)}
+                        basic
+                        color='blue'
+                        content='Edit'
+                    />  
+                    <Button
+                        onClick={() => history.push('/activities')}
+                        basic
+                        color='grey'
+                        content='Cancel'
+                    />
                 </Button.Group>
             </Card.Content>
         </Card>
