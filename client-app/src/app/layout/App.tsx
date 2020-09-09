@@ -32,12 +32,12 @@ const App = () => {
                   <Route exact path='/' component={HomePage} />
                   <Route exact path='/activities' component={ActivityDashboard} />
                   <Route path='/activities/:id' component={ActivityDetails} />
-                  <Route path='/createActivity' component={ActivityForm} />
+                  <Route path={['/createActivity', '/manage/:id']} component={ActivityForm} />
               </Container>
         </Fragment>
       );
 }
 
 //observer is a higher order component
-//this will allow the component to observer the observable from the store
+//this will allow the component to observe the observable from the store
 export default observer(App);
