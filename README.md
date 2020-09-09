@@ -86,6 +86,7 @@ dotnet run
 <details>
 <summary>React Router</summary>
 
+* 2114: 09/08/2020 *Viewing detail and routing to a different page successful*
 * 2344: 09/07/2020 *Links added in `NavBar.tsx`*
 * 2335: 09/07/2020 *Routes setup in `App.tsx`*
 * 2322: 09/07/2020 *Installed `react-router-dom`, and imported in `index.tsx` file in `scr`*
