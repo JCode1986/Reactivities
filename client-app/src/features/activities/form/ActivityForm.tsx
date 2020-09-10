@@ -12,7 +12,7 @@ interface DetailsParams {
 }
 
 //deconstructing from route component props
-const ActivityForm: React.FC<RouteComponentProps<DetailsParams>> = ({ match }) => {
+const ActivityForm: React.FC<RouteComponentProps<DetailsParams>> = ({ match, history }) => {
     const activityStore = useContext(ActivityStore);
     const {
         createActivity,
@@ -24,10 +24,21 @@ const ActivityForm: React.FC<RouteComponentProps<DetailsParams>> = ({ match }) =
         clearActivity
     } = activityStore;
 
+    const [activity, setActivity] = useState<IActivity>({
+        id: '',
+        title: '',
+        category: '',
+        description: '',
+        date: '',
+        city: '',
+        venue: ''
+    });
+
     //only load activity when editing an activity
     useEffect(() => {
-        if (match.params.id) {
-            loadActivity(match.params.id).then(() => initialFormState && setActivity(initialFormState)
+        if (match.params.id && activity.id.length === 0) {
+            loadActivity(match.params.id).then(
+                () => initialFormState && setActivity(initialFormState)
             );
         }
 
@@ -35,34 +46,25 @@ const ActivityForm: React.FC<RouteComponentProps<DetailsParams>> = ({ match }) =
             clearActivity();
         }
         //add dependencies
-    }, [loadActivity, clearActivity, match.params.id, initialFormState])
-
-    const [activity, setActivity] = useState<IActivity>({
-            id: '',
-            title: '',
-            category: '',
-            description: '',
-            date: '',
-            city: '',
-            venue: ''
-    })
+    }, [loadActivity, match.params.id, clearActivity, initialFormState, activity.id.length]);
 
     const handleSubmit = () => {
         if (activity.id.length === 0) {
             let newActivity = {
                 ...activity,
                 id: uuid()
-            }
-            createActivity(newActivity);
+            };
+            //navigate to created activity after creating
+            createActivity(newActivity).then(() => history.push(`/activities/${newActivity.id}`));
         } else {
-            editActivity(activity);
-        }
-    }
+            editActivity(activity).then(() => history.push(`/activities/${activity.id}`));
+        };
+    };
 
     const handleInputChange = (event: FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = event.currentTarget;
         setActivity({ ...activity, [name]: value })
-    } 
+    }; 
 
     return (
         <Segment clearing>

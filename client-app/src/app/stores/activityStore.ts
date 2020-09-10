@@ -152,7 +152,7 @@ class ActivityStore {
 
     @action openCreateForm = () => {
         this.editMode = true;
-        this.activity = undefined;
+        this.activity = null;
     }
 
     @action selectActivity = (id: string) => {
