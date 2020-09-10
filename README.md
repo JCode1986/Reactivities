@@ -86,6 +86,7 @@ dotnet run
 <details>
 <summary>React Router</summary>
 
+* 0011: 09/10/2020 *Navigation after submissions now working*
 * 2336: 09/09/2020 *Utilized fully uncontrolled component with key to reset component state when creating or updating activity*
 * 0152: 09/09/2020 *Routing to edit form complete*
 * 0124: 09/09/2020 *Added route parameters in `ActivityDetails.tsx`*
