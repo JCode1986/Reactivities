@@ -18,7 +18,6 @@ const ActivityForm: React.FC<RouteComponentProps<DetailsParams>> = ({ match, his
         createActivity,
         editActivity,
         submitting,
-        cancelFormOpen,
         activity: initialFormState,
         loadActivity,
         clearActivity
@@ -107,7 +106,7 @@ const ActivityForm: React.FC<RouteComponentProps<DetailsParams>> = ({ match, his
                     onChange={handleInputChange}
                     name='title' placeholder='Title'/>
                 <Button
-                    onClick={cancelFormOpen}
+                    onClick={() => history.push('/activities')}
                     floated='right' type='submit'
                     content='Cancel' />
             </Form>
