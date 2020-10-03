@@ -1,9 +1,7 @@
-import React, { useEffect, Fragment, useContext } from 'react';
+import React, { Fragment } from 'react';
 import { Container } from 'semantic-ui-react'
 import NavBar from '../../features/nav/NavBar';
 import ActivityDashboard from '../../features/activities/dashboard/ActivityDashboard';
-import LoadingComponent from './LoadingComponent';
-import ActivityStore from '../stores/activityStore';
 import { observer } from 'mobx-react-lite';
 import { Route, withRouter, RouteComponentProps } from 'react-router-dom';
 import HomePage from '../../features/home/HomePage';
@@ -11,18 +9,6 @@ import ActivityForm from '../../features/activities/form/ActivityForm';
 import ActivityDetails from '../../features/activities/details/ActivityDetails';
 
 const App: React.FC<RouteComponentProps> = ({ location }) => {
-    //bring in activity store
-    const activityStore = useContext(ActivityStore);
-
-    //3 component life cycle methods in one
-    //hook effect takes in a function
-    useEffect(() => {
-       //use activity store to access functions
-        activityStore.loadActivities();
-        //dependency array
-    }, [activityStore]);
-
-    if (activityStore.loadingInitial) return <LoadingComponent content='Loading activities...' />
 
       return (
           <Fragment>
