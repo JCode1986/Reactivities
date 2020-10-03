@@ -84,9 +84,17 @@ dotnet run
 ## Log
 
 <details>
+<summary>Styling</summary>
+
+* 2312: 10/02/2020 *Created function to sort dates and group the same dates together*
+* 2246: 10/02/2020 *Created `ActivityListItem.tsx` in `src` -> `features` -> `activities` -> `dashboard` and removed Item from `AcitivityList.tsx` to `ActivityListItem.tsx`*
+
+</details>
+
+<details>
 <summary>React Router</summary>
 
-
+* 2230: 10/02/2020 *Removed unused code*
 * 2214: 09/11/2020 *Scroll to top functionality added in `ScrollToTop.tsx` in `src`->`app`->`layout`; wrapped in `app.tsx`*
 * 2155: 09/11/2020 *Moved home page outside of navigation routes*
 * 0011: 09/10/2020 *Navigation after submissions now working*
