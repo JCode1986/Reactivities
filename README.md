@@ -86,6 +86,7 @@ dotnet run
 <details>
 <summary>Styling</summary>
 
+* 1939: 10/04/2020 *Added styling to activity list*
 * 2312: 10/02/2020 *Created function to sort dates and group the same dates together*
 * 2246: 10/02/2020 *Created `ActivityListItem.tsx` in `src` -> `features` -> `activities` -> `dashboard` and removed Item from `AcitivityList.tsx` to `ActivityListItem.tsx`*
 
